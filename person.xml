@@ -1,0 +1,15 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<Data>
+	<Person>
+		<FirstName>Albert</FirstName>
+		<LastName>Merkel</LastName>
+		<Age>20</Age>
+	</Person>
+	<Person>
+		<FirstName>Ilya</FirstName>
+		<LastName>Malyshev</LastName>
+		<Age>1020</Age>
+	</Person>
+</Data>>
+</xml>
