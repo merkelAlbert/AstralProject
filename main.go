@@ -3,7 +3,6 @@ package main
 import (
 	"AstralProject/CmdParser"
 	"AstralProject/ConfigTypes"
-	"AstralProject/ConfigValidator"
 	"AstralProject/FileManager"
 	"AstralProject/Logger"
 	"encoding/xml"
@@ -22,9 +21,7 @@ func main() {
 	var data ConfigTypes.Data
 
 	xml.Unmarshal(config, &data)
-
 	for _, v := range data.PersonList {
 		fmt.Println(v)
-		fmt.Println(ConfigValidator.ValidateAge(v.Age))
 	}
 }
