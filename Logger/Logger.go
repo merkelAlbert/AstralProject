@@ -19,3 +19,7 @@ func LogError(err error, description string) {
 		log.Println("Error: ", err.Error(), ". ", description)
 	}
 }
+
+func LogText(text string) {
+	log.Println(text)
+}

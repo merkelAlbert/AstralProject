@@ -16,7 +16,6 @@ var config []byte
 
 func main() {
 	loggerPath, configPath = CmdParser.GetPathsFromCommandLine()
-
 	Logger.SetLogger(loggerPath)
 
 	config = FileManager.Read(configPath)
