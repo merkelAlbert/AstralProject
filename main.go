@@ -7,6 +7,7 @@ import (
 	"AstralProject/Logger"
 	"encoding/xml"
 	"fmt"
+	"os"
 )
 
 var configPath string
@@ -17,7 +18,7 @@ func main() {
 	loggerPath, configPath = CmdParser.GetPathsFromCommandLine()
 	Logger.SetLogger(loggerPath)
 
-	config = FileManager.Read(configPath)
+	config = FileManager.Read(configPath, os.O_RDONLY, 0444)
 	var data ConfigTypes.Data
 
 	xml.Unmarshal(config, &data)

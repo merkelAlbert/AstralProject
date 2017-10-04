@@ -10,14 +10,14 @@ func ValidateAge(age uint) bool {
 
 		return true
 	}
-	fmt.Println(fmt.Sprintf("Age Can not be more than 120. Received: %v", age))
+	log.Println(fmt.Sprintf("Age Can not be more than 120. Received: %v", age))
 	return false
 }
 
-func ValidatefirstName(firstName string) bool {
+func ValidateFirstName(firstName string) bool {
 	for _, c := range firstName {
 		if !unicode.IsLetter(c) {
-			fmt.Println("First name can bot contain non-letter symbol")
+			log.Println("First name can bot contain non-letter symbol")
 			return false
 		}
 	}

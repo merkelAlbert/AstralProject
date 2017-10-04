@@ -17,7 +17,7 @@ func TestAgeValidator(t *testing.T) {
 func TestFirstNameValidator(t *testing.T) {
 	var name string
 	name = "Альберт"
-	var result = ValidatefirstName(name)
+	var result = ValidateFirstName(name)
 	if result != true {
 		t.Error(fmt.Sprintf("Expected: true, got: %v", result))
 	}

@@ -17,6 +17,7 @@ type Data struct {
 	PersonList []Person `xml:"Person"`
 }
 
+//Print config in formatted style
 func (p Person) String() string {
 	return fmt.Sprintf("Person:\n%s\n%s\n%v\n", p.FirstName, p.LastName, p.Age)
 }
