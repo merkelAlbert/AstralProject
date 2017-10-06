@@ -9,7 +9,7 @@ import (
 )
 
 //Данная функция открывает файл и возвращает его указатель
-func open(s string, flag int, perm os.FileMode) *os.File {
+func Open(s string, flag int, perm os.FileMode) *os.File {
 	file, err := os.OpenFile(s, flag, perm)
 	if err != nil {
 		logger.LogError(err, fmt.Sprintf("Can not open file '%s'", s))
