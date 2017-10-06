@@ -1,10 +1,12 @@
-package ConfigValidator
+//Данный пакет предназначен для валидации полей конфига
+package configValidator
 
 import (
 	"fmt"
 	"unicode"
 )
 
+//Данная функция проверяет поле "Age"
 func ValidateAge(age uint) bool {
 	if age < 120 {
 
@@ -14,6 +16,7 @@ func ValidateAge(age uint) bool {
 	return false
 }
 
+//Данная функция проверяет поле "FirstName"
 func ValidateFirstName(firstName string) bool {
 	for _, c := range firstName {
 		if !unicode.IsLetter(c) {

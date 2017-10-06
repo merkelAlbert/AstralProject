@@ -10,16 +10,16 @@ import (
 	"os"
 )
 
-var configPath string
-var loggerPath string
-var config []byte
-
 func main() {
-	loggerPath, configPath = CmdParser.GetPathsFromCommandLine()
-	Logger.SetLogger(loggerPath)
+	var configPath string
+	var loggerPath string
+	var config []byte
 
-	config = FileManager.Read(configPath, os.O_RDONLY, 0444)
-	var data ConfigTypes.Data
+	loggerPath, configPath = cmdParser.GetPathsFromCommandLine()
+	logger.SetLogger(loggerPath)
+
+	config = fileManager.Read(configPath, os.O_RDONLY, 0444)
+	var data configTypes.Data
 
 	xml.Unmarshal(config, &data)
 	for _, v := range data.PersonList {

@@ -1,4 +1,4 @@
-package ConfigValidator
+package configValidator
 
 import (
 	"fmt"
