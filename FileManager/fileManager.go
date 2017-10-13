@@ -2,28 +2,25 @@
 package fileManager
 
 import (
-	"AstralProject/Logger"
-	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 )
 
-//Данная функция открывает файл и возвращает его указатель
-func Open(s string, flag int, perm os.FileMode) *os.File {
+//Данная функция открывает и считывает данные из заданного файла//ReadFile
+func Read(s string, flag int, perm os.FileMode) []byte {
 	file, err := os.OpenFile(s, flag, perm)
 	if err != nil {
-		logger.LogError(err, fmt.Sprintf("Can not open file '%s'", s))
+		log.Fatal(err)
+	} else {
+		log.Printf("file %s is succefully opened", s)
 	}
-	return file
-}
-
-//Данная функция открывает и считывает данные из заданного файла
-func Read(s string, flag int, perm os.FileMode) []byte {
-	var file = open(s, flag, perm)
 	defer file.Close()
 	input, err := ioutil.ReadAll(file)
 	if err != nil {
-		logger.LogError(err, fmt.Sprintf("Can not read file '%s'", s))
+		log.Fatal(err)
+	} else {
+		log.Printf("file %s is succesully readed", s)
 	}
 	return input
 }

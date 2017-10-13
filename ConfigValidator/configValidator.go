@@ -3,6 +3,7 @@ package configValidator
 
 import (
 	"fmt"
+	"log"
 	"unicode"
 )
 
@@ -12,7 +13,7 @@ func ValidateAge(age uint) bool {
 
 		return true
 	}
-	log.Println(fmt.Sprintf("Age Can not be more than 120. Received: %v", age))
+	log.Printf("Age Can not be more than 120. Received: %v", age)
 	return false
 }
 
@@ -20,7 +21,7 @@ func ValidateAge(age uint) bool {
 func ValidateFirstName(firstName string) bool {
 	for _, c := range firstName {
 		if !unicode.IsLetter(c) {
-			log.Println("First name can bot contain non-letter symbol")
+			log.Printf("First name can bot contain non-letter symbol")
 			return false
 		}
 	}
